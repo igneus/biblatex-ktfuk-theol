@@ -13,7 +13,8 @@ my master thesis is being written.
 ## Usage ##
 
 put the *bx files in your local texmf directory (or in the home directory
-of your current theological project) and put this in the preamble:
+of your current theological project) and put this in the preamble
+of your document:
 
 	\usepackage{czech}{babel}
 	\usepackage[
