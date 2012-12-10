@@ -1,0 +1,14 @@
+\ProvidesFile{ktfuk-theol.bbx}[2012 v1.0 biblatex bibliography style]
+
+\RequireBibliographyStyle{verbose}
+
+% format jmena: prijmeni velkymi pismeny, carka, zbytek jmen normalne
+\DeclareNameFormat{author}{\uppercase{#1}, #3}
+\DeclareNameFormat{editor}{\uppercase{#1}, #3}
+
+\DeclareFieldFormat{edition}{%
+  \ifinteger{#1}
+    {#1\adddot~\bibstring{edition}}
+    {#1\isdot}}
+
+\endinput
