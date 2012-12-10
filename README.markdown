@@ -15,12 +15,12 @@ my master thesis is being written.
 put the *bx files in your local texmf directory (or in the home directory
 of your current theological project) and put this in the preamble:
 
-\usepackage{czech}{babel}
-\usepackage[
-   backend=biber      % just an example, use backend of your choice
-  ,style=ktfuk-theol  % select our bibliography+citation style
-  ,sortlocale=cs_CZ   % locale of main language, it is for sorting
-]{biblatex}
+	\usepackage{czech}{babel}
+	\usepackage[
+	backend=biber      % just an example, use backend of your choice
+	,style=ktfuk-theol  % select our bibliography+citation style
+	,sortlocale=cs_CZ   % locale of main language, it is for sorting
+	]{biblatex}
 
 ## License ##
 
