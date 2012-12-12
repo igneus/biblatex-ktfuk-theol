@@ -6,6 +6,9 @@
 \DeclareNameFormat{author}{\uppercase{#1}, #3}
 \DeclareNameFormat{editor}{\uppercase{#1}, #3}
 
+% vychozi podoba v biblatexu je v uvozovkach, to nechceme
+\DeclareFieldFormat[inbook, article]{title}{#1}
+
 \DeclareFieldFormat{edition}{%
   \ifinteger{#1}
     {#1\adddot~\bibstring{edition}}
