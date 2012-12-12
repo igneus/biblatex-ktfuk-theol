@@ -25,7 +25,53 @@
   \printtext{%
     \bibstring{in}\addspace}}
 
-% article driver
+%
+% article - a lot of changes are necessary here
+%
+
+% (orig: standard.bbx)
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \iffieldundef{series}
+    {}
+    {\newunit
+     \printfield{series}%
+     \setunit{\addspace}}%
+  \usebibmacro{issue+date}%
+  \setunit{\addcomma\addspace}%
+  \usebibmacro{volume+number+eid}%
+  \setunit{\addcolon\space}%
+  \usebibmacro{issue}%
+  \newunit}
+
+% issue/year: no parentheses; comma after the date
+% (orig: standard.bbx)
+\newbibmacro*{issue+date}{%
+  \printtext{%
+    \iffieldundef{issue}
+      {}
+      {\printfield{issue}%
+       \setunit*{\addspace}}
+    \usebibmacro{date}}%
+  \newunit}
+
+% volume and number: add bibstrings (macro thorougly changed)
+% (orig: standard.bbx)
+\renewbibmacro*{volume+number+eid}{%
+  \iffieldundef{volume}
+               {}
+               {\bibstring{volume}\addspace%
+                 \printfield{volume}%
+                 \setunit*{\addcomma\addspace}}
+  \iffieldundef{number}
+               {}
+               {\bibstring{number}\addspace%
+                 \printfield{number}%
+                 \setunit{\addcomma\space}}
+  \printfield{eid}}
+
+% article driver - no 'in' should be there
 % (orig: standard.bbx)
 \DeclareBibliographyDriver{article}{%
   \usebibmacro{bibindex}%
@@ -42,7 +88,7 @@
   \newunit\newblock
   \printfield{version}%
   \newunit\newblock
-  % \usebibmacro{in:}% % we don't want a 'in' here
+  % \usebibmacro{in:}% % we don't want an 'in' here
   \usebibmacro{journal+issuetitle}%
   \newunit
   \usebibmacro{byeditor+others}%
