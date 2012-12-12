@@ -2,21 +2,63 @@
 
 \RequireBibliographyStyle{verbose}
 
-% format jmena: prijmeni velkymi pismeny, carka, zbytek jmen normalne
+% names: a lastname uppercased, comma, first and other names
+% (orig: biblatex.def)
 \DeclareNameFormat{author}{\uppercase{#1}, #3}
 \DeclareNameFormat{editor}{\uppercase{#1}, #3}
 
-% vychozi podoba v biblatexu je v uvozovkach, to nechceme
+% title of an article in a journal or book - we don't want the quotation marks
+% as default in biblatex
+% (orig: biblatex.def)
 \DeclareFieldFormat[inbook, article]{title}{#1}
 
+% edition number - always a number, with a period
+% (orig: biblatex.def)
 \DeclareFieldFormat{edition}{%
   \ifinteger{#1}
     {#1\adddot~\bibstring{edition}}
     {#1\isdot}}
 
-% chceme In bez dvojtecky
+% in - without a colon (which is default in biblatex)
+% (orig: biblatex.def)
 \renewbibmacro*{in:}{%
   \printtext{%
     \bibstring{in}\addspace}}
+
+% article driver
+% (orig: standard.bbx)
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \setunit{\labelnamepunct}\newblock
+  \usebibmacro{title}%
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{bytranslator+others}%
+  \newunit\newblock
+  \printfield{version}%
+  \newunit\newblock
+  % \usebibmacro{in:}% % we don't want a 'in' here
+  \usebibmacro{journal+issuetitle}%
+  \newunit
+  \usebibmacro{byeditor+others}%
+  \newunit
+  \usebibmacro{note+pages}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{issn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+
 
 \endinput
