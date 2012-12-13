@@ -1,10 +1,10 @@
 # 'ktfuk-theol' bibliography and citation style for BibLaTeX #
 
 This is an attempt to produce a BibLaTeX bibliography and citation style
-as much as possible with the internal rules for theological works
+following as closely as possible the internal rules for theological works
 of the Catholic Theological Faculty, Charles University in Prague 
-(which happens to be alma mater of the author of this style),
-as described in the official guideline
+(which happens to be alma mater of the author of this style).
+See the official guideline
 http://www.ktf.cuni.cz/KTF-963-version1-FormalniupravaKTF.pdf [seen 10.12.2012]
 
 It is currently an incomplete work in progress, developed at the same time as
@@ -25,9 +25,7 @@ of your document:
 
 ## License ##
 
-GNU/GPL 3, with the exception of czech.lbx - at this point of time I don't
-know the legal state of this file as I am not it's creator, see below.
-I'll try to put this inconsistency in order in the near future.
+GNU/GPL 3
 
 ## Credits ##
 
