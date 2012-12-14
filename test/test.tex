@@ -1,0 +1,142 @@
+\documentclass[12pt, a4paper, landscape]{article}
+\usepackage[margin=1.5cm]{geometry}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures={TeX}]{TeXGyreTermes}
+
+\usepackage[czech]{babel}
+\usepackage{csquotes}
+
+\usepackage[backend=biber, style=ktfuk-theol]{biblatex}
+
+%\usepackage[hidelinks]{hyperref}
+
+% nahrat bibliografii:
+\bibliography{testbibliografie}
+
+\title{Test stylu bibliografie a citací ktfuk-theol}
+
+\newcommand{\vzduch}{\vspace{8mm}}
+
+\begin{document}
+
+\maketitle
+
+\textsf{ktfuk-theol} je styl bibliografie a citací pro BibLaTeX,
+vyvíjený s cílem dosáhnout plného souladu s interními předpisy
+Katolické teologické fakulty University Karlovy v Praze 
+o bibliografických údajích a citacích ve studentských pracích
+v oboru teologie.\footcite[8-12]{ktfukpravidla}
+
+Tento dokument slouží k ověření (ne)správnosti fungování tohoto stylu
+srovnávací metodou.
+
+\section{Srovnávací test generování bibliografických záznamů}
+
+Níže je pro každý ze vzorových bibliografických 
+záznamů uvedených v normě nejprve \uv{natvrdo} ručně vysázen vzor
+a pod ním ten samý záznam vygenerovaný BibLaTeXem z připravené
+bibliografické databáze \textsf{testbibliografie.bib}.
+
+\subsubsection{Monografie}
+
+\setlength{\parindent}{0pt}
+
+\indent%
+RATZINGER, Joseph. 
+\emph{Eschatologie: smrt a věčný život.} 
+2. vydání. 
+Brno: Barrister \& Principal, 
+2004.
+
+\cite{eschatologie}
+
+\vzduch
+
+FIORENZA, Francis S. – GALVIN, John P. 
+\emph{Systematická teologie: římskokatolická perspektiva.} 
+1. sv. 
+Brno: Centrum pro studium demokracie a kultury, 
+1996.
+
+\cite{fiorenza}
+
+\subsubsection{Kapitola v monografii}
+
+MADEC, Goulven. 
+Aurelius Augustinus: křesťanství jako naplnění platonismu.
+In 
+KARFÍK, Filip – NĚMEC, Václav – VILÍM, František (ed.). 
+\emph{Křesťanství a filosofie: postavy latinské tradice: 
+Augustinus, Boëthius, Jan Eriugena, 
+Anselm z Canterbury, Tomáš Akvinský, Jan Duns Scotus.} 
+Praha: 
+Česká křesťanská akademie,
+1994, 
+s. 9–26.
+
+\cite{krestanstviplatonismus}
+
+\subsubsection{Článek v časopise}
+
+KASPER, Walter. 
+Kristovo nanebevstoupení – historie a theologický význam.
+\emph{Mezinárodní katolická revue Communio} 
+1999, 
+roč. 3, č. 3, 
+s. 223–232.
+
+\cite{nanebevstoupeni}
+
+\vzduch
+
+BALTHASAR, Hans Urs von. 
+První v novém světě.
+\emph{Mezinárodní katolická revue Communio} 
+1999, 
+roč. 3, č. 3, 
+s. 297–302.
+
+\cite{prvni}
+
+\vzduch
+
+MANDL, Antonín. 
+Pouť na Velehrad L. P. 1968.
+\emph{Katolické noviny} 
+1968, 
+16. 5., 
+roč. 20, č. 20, 
+s. 1–2.
+
+\cite{pout}
+
+\subsubsection{Elektronický zdroj}
+
+Český statistický úřad. 
+\emph{Grafy populačního vývoje 1946–2004} 
+[2006-03-18].
+<http://www.czso.cz>.
+
+\cite{populacnivyvoj}
+
+\vzduch
+
+SKOBLÍK, Jiří. 
+\emph{Setkání empirie se spekulací v etické argumentaci církve} 
+(4.9.2002)
+[2006-11-16]. 
+<http://ktf.cuni.cz/\textasciitilde skoblik/empir\_spekul.htm>.
+
+\cite{empiriespekulace}
+
+\vzduch
+
+\emph{Prohlášení arcibiskupství pražského k papežské návštěvě ČR} 
+(16.11.2006) 
+[2006-11-16]. 
+<http://tisk.cirkev.cz/z-domova/prohlaseni-arcibiskupstvi-prazskeho-k-papezske-navsteve-cr.html>.
+
+\cite{papezskanavsteva}
+
+\end{document}
