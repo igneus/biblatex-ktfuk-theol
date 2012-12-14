@@ -22,6 +22,11 @@ of your document:
 	,style=ktfuk-theol  % select our bibliography+citation style
 	,sortlocale=cs_CZ   % locale of main language, it is for sorting
 	]{biblatex}
+	
+## Working example and validity control ##
+
+See test/test.pdf and compare what the citations should look like and what
+they currently look like.
 
 ## License ##
 
